@@ -7,6 +7,7 @@ using System.Web.Http;
 
 namespace GitHubSearcher.Controllers
 {
+    /*Much like the regular MVC controllers, Web API controllers are  classes  that  extend  a  base  ApiController  class  instead  of  the  Controller  class. Like the Controller class, the ApiController contains a lot of core methods that will help bind and execute the custom controller code and return for output*/
     public class ValuesController : ApiController
     {
         // GET api/values
