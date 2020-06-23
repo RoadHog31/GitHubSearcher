@@ -17,7 +17,7 @@ namespace GitHubSearcher
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { controller = "Users", action = "View", id = RouteParameter.Optional }
             );
         }
     }

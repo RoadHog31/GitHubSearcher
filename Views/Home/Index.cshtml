@@ -1,9 +1,13 @@
 ﻿
-<div class="row">
-    <div class="input-group flex-nowrap">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping"></span>
+<form>
+    <div class="form-row align-items-center">
+        <div class="col-sm-3 my-1">
+            <label class="sr-only" for="inlineFormInputName">Name</label>
+            <input type="text" class="form-control" id="inlineFormInputName" placeholder="Search GitHub Name">
+        </div>       
+        
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Search</button>
         </div>
-        <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="addon-wrapping">
     </div>
-</div>
+</form>
