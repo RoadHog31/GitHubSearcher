@@ -13,6 +13,8 @@ namespace GitHubSearcher.Controllers
         /*HttpClient is intended to be instantiated once and re-used throughout the life of an application. Instantiating an HttpClient class for every request will exhaust the number of sockets available under heavy loads. This will result in SocketException errors. Below is an example using HttpClient correctly.The recommended practice is to create a single, shared HttpClient instance throughout the application.*/
         private static readonly HttpClient HttpClient;
 
+        public string SearchString { get; set; }
+
         static UsersController()
         {
             //HttpClient is the new and improved way of doing HTTP requests and posts.
