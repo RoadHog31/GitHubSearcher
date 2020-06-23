@@ -1,21 +1,42 @@
-﻿@{
+﻿@model GitHubSearcher.Models.User
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <p> User View </p>
 
 <br />
-    <form method="get">
-        <div class="form-row align-items-center">
-            <div class="col-sm-3 my-1">
-                <label class="sr-only" for="inlineFormInputName">Name</label>
-                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Search GitHub Name">
-            </div>
-
-            <div class="col-auto my-1">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </div>
+<form method="get">
+    <div class="form-row align-items-center">
+        <div class="col-sm-3 my-1">
+            <label class="sr-only" for="inlineFormInputName">Name</label>
+            <input type="text" class="form-control" id="inlineFormInputName" placeholder="Search GitHub Name">
         </div>
-    </form>
+
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+<h2>GetJsonDataModel</h2>
+@{
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Avatar URL</th>
+        </tr>
+        <tr>
+            <th>@Model.id</th>
+            <th>@Model.name</th>
+            <th>@Model.location</th>
+            <th>@Model.avatar_url</th>
+        </tr>
+    </table>
+}
+
 
 
