@@ -15,7 +15,6 @@ namespace GitHubSearcher
         {
             /*Just  like  RouteConfig,  this  creates  a  new  default  route  that  will  allow  the  commonHTTP verbs associated with a RESTful application to work out of the box. A key dif‐ference is that all URLs are prefixed with api before the controller and action*/
             AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
