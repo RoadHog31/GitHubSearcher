@@ -388,7 +388,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Scripts\knockout.validation.min.js.map" />
-    <Content Include="Views\Users\View.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
