@@ -13,7 +13,7 @@ namespace GitHubSearcher.Controllers
         /*Private field: HttpClient is intended to be instantiated once and re-used throughout the life of an application. Instantiating an HttpClient class for every request will exhaust the number of sockets available under heavy loads. This will result in SocketException errors. Below is an example using HttpClient correctly.The recommended practice is to create a single, shared HttpClient instance throughout the application.*/
         private static readonly HttpClient HttpClient;        
 
-        public List<Users> UserData { get; private set; }
+        public List<User> UserData { get; private set; }
 
         //Constructor
         static HomeController()
@@ -43,7 +43,7 @@ namespace GitHubSearcher.Controllers
         [HttpGet]
         public async Task<ActionResult> GetUserData(string searchString)
         {
-            string newurl = "https://api.github.com/users/" + searchString;
+            string newurl = searchString;
 
             if (HttpClient.BaseAddress == null)
             {   //Passing service base url
@@ -63,7 +63,7 @@ namespace GitHubSearcher.Controllers
                 var UserResponse = response.Content.ReadAsStringAsync().Result;
 
                 //Deserializing the response recieved from web api and storing into the Employee list  
-                UserData = JsonConvert.DeserializeObject<List<Users>>(UserResponse);
+                UserData = JsonConvert.DeserializeObject<List<User>>(UserResponse);
 
             }
 
