@@ -41,7 +41,7 @@ namespace GitHubSearcher.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAsync(string searchString)
         {
-            List<User> UserData = new List<User>();
+            User UserData = new User();
 
             string newUrl = "users/" + searchString;
             
@@ -66,12 +66,12 @@ namespace GitHubSearcher.Controllers
                 var UserResponse = response.Content.ReadAsStringAsync().Result;
 
                 //Deserializing the response recieved from web api and storing into the Employee list  
-                UserData = JsonConvert.DeserializeObject<List<User>>(UserResponse);
+                UserData = JsonConvert.DeserializeObject<User>(UserResponse);
 
             }
 
             //returning the users list to view  
-            return View(UserData);
+            return View("Index", UserData);
             
         }
 

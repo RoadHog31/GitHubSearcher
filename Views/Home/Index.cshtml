@@ -1,8 +1,9 @@
-﻿@model IEnumerable<GitHubSearcher.Models.User>
+﻿@model GitHubSearcher.Models.User
 
 @{
     ViewBag.Title = "Index";
 }
+
 
 <P> Welcome </P>
 <br />
@@ -21,191 +22,186 @@
     </form>
 }
 <br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.login)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.node_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.avatar_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.gravatar_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.html_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.followers_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.following_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.gists_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.starred_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.subscriptions_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.organizations_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.repos_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.events_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.received_events_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.site_admin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.company)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.blog)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.bio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.public_repos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.public_gists)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.followers)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.following)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.created_at)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.updated_at)
-        </th>
-        <th></th>
-    </tr>
+@{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.node_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.avatar_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gravatar_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.html_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.followers_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.following_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gists_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.starred_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subscriptions_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.organizations_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.repos_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.events_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.received_events_url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.site_admin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.blog)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.public_repos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.public_gists)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.followers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.following)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.created_at)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updated_at)
+            </th>
+            <th></th>
+        </tr>
 
-    @if (Model != null)
-    {
-        foreach (var item in Model)
+        @if (Model != null)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.login)
+                    @Model.login
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.node_id)
+                    @Model.node_id
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.avatar_url)
+                    @Model.avatar_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.gravatar_id)
+                    @Model.gravatar_id
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.url)
+                    @Model.url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.html_url)
+                    @Model.html_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.followers_url)
+                    @Model.followers_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.following_url)
+                    @Model.following_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.gists_url)
+                    @Model.gists_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.starred_url)
+                    @Model.starred_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.subscriptions_url)
+                    @Model.subscriptions_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.organizations_url)
+                    @Model.organizations_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.repos_url)
+                    @Model.repos_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.events_url)
+                    @Model.events_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.received_events_url)
+                    @Model.received_events_url
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.type)
+                    @Model.type
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.site_admin)
+                    @Model.site_admin
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.name)
+                    @Model.name
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.company)
+                    @Model.company
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.blog)
+                    @Model.blog
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.location)
+                    @Model.location
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.bio)
+                    @Model.bio
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.public_repos)
+                    @Model.public_repos
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.public_gists)
+                    @Model.public_gists
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.followers)
+                    @Model.followers
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.following)
+                    @Model.following
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.created_at)
+                    @Model.created_at
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.updated_at)
+                    @Model.updated_at
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
-                </td>
+
             </tr>
         }
-    }
 
-</table>
+        </table>
+    }
