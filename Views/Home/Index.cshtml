@@ -3,9 +3,46 @@
 @{
     ViewBag.Title = "Main Page";
 }
+<title>Top 5 Repo's </title>
+@{ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.avatar_url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.repos_url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+    </tr>
 
+    @if (Model != null)
+    {
+        <tr>
+            <td>
+                @Model.avatar_url
+            </td>
 
-<P> Welcome </P>
+            <td>
+                @Model.repos_url
+            </td>
+            <td>
+                @Model.name
+            </td>
+            <td>
+                @Model.location
+            </td>
+        </tr>
+    }
+
+</table>
+}
+<title> Welcome </title>
 <br />
 @using (Html.BeginForm("GetAsync", "Home", FormMethod.Get))
 {
@@ -24,39 +61,40 @@
 <br />
 @{
     <table class="table">
-        <tr>            
+        <tr>
             <th>
                 @Html.DisplayNameFor(model => model.avatar_url)
-            </th>          
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.repos_url)
-            </th>           
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.name)
-            </th>          
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.location)
-            </th>            
+            </th>
         </tr>
 
         @if (Model != null)
         {
-            <tr>                
+            <tr>
                 <td>
                     @Model.avatar_url
                 </td>
-                
+
                 <td>
                     @Model.repos_url
-                </td>                
+                </td>
                 <td>
                     @Model.name
-                </td>                
+                </td>
                 <td>
                     @Model.location
                 </td>
             </tr>
         }
 
-        </table>
-    }
+    </table>
+
+}
