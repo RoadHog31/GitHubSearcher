@@ -27,6 +27,11 @@ namespace GitHubSearcher.Controllers
 
         }    
 
+        public ActionResult Index()
+        {
+            return View("Index");
+        }
+
 
         /*Steps involved:
             1) Get Json URL which will provide Github user data
@@ -36,13 +41,14 @@ namespace GitHubSearcher.Controllers
             5) Display this Json result data to user in a Razor view page.
         */
         [HttpGet]
-        public async Task<ActionResult> Index(string searchString)
+        public async Task<ActionResult> GetUserData(string searchString)
         {
-            
             string newurl = "https://api.github.com/users/" + searchString;
 
-            //Passing service base url
-            HttpClient.BaseAddress = new Uri("https://api.github.com/users/");
+            if (HttpClient.BaseAddress == null)
+            {   //Passing service base url
+                HttpClient.BaseAddress = new Uri("https://api.github.com/users/");
+            }
             HttpClient.DefaultRequestHeaders.Clear();
             // You should set the version so that GitHub knows what API you area calling
             HttpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
@@ -62,7 +68,7 @@ namespace GitHubSearcher.Controllers
             }
 
             //returning the users list to view  
-            return View(UserData);
+            return View("Index", UserData);
         }
 
         
