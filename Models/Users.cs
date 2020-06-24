@@ -7,6 +7,6 @@ namespace GitHubSearcher.Models
 {
     public class Users
     {
-        public List<User> UserData { get; private set; }
+        public IList<User> UsersData { get; private set; }
     }
 }

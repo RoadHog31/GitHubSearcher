@@ -1,7 +1,9 @@
 ﻿using GitHubSearcher.Models;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -13,8 +15,7 @@ namespace GitHubSearcher.Controllers
     {
         /*Private field: HttpClient is intended to be instantiated once and re-used throughout the life of an application. Instantiating an HttpClient class for every request will exhaust the number of sockets available under heavy loads. This will result in SocketException errors. Below is an example using HttpClient correctly.The recommended practice is to create a single, shared HttpClient instance throughout the application.*/
         private static HttpClient HttpClient;        
-
-        public User UserData { get; private set; }
+        
 
         //Constructor
         public HomeController()
@@ -40,8 +41,8 @@ namespace GitHubSearcher.Controllers
         [HttpGet]
         public async Task<ActionResult> GetAsync(string searchString)
         {
-            
-            
+            List<User> UserData = new List<User>();
+
             string newUrl = "users/" + searchString;
             
                         
@@ -65,12 +66,12 @@ namespace GitHubSearcher.Controllers
                 var UserResponse = response.Content.ReadAsStringAsync().Result;
 
                 //Deserializing the response recieved from web api and storing into the Employee list  
-                UserData = JsonConvert.DeserializeObject<User>(UserResponse);
+                UserData = JsonConvert.DeserializeObject<List<User>>(UserResponse);
 
             }
 
             //returning the users list to view  
-            return View("Index", IEnumerableValueProvider<UserData> UserData);
+            return View(UserData);
             
         }
 
