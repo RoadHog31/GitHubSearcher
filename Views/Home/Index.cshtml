@@ -1,7 +1,7 @@
 ﻿@model GitHubSearcher.Models.User
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Main Page";
 }
 
 
@@ -24,182 +24,37 @@
 <br />
 @{
     <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.login)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.node_id)
-            </th>
+        <tr>            
             <th>
                 @Html.DisplayNameFor(model => model.avatar_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.gravatar_id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.html_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.followers_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.following_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.gists_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.starred_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.subscriptions_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.organizations_url)
-            </th>
+            </th>          
             <th>
                 @Html.DisplayNameFor(model => model.repos_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.events_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.received_events_url)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.site_admin)
-            </th>
+            </th>           
             <th>
                 @Html.DisplayNameFor(model => model.name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.company)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.blog)
-            </th>
+            </th>          
             <th>
                 @Html.DisplayNameFor(model => model.location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.bio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.public_repos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.public_gists)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.followers)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.following)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.created_at)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.updated_at)
-            </th>
-            <th></th>
+            </th>            
         </tr>
 
         @if (Model != null)
         {
-            <tr>
-                <td>
-                    @Model.login
-                </td>
-                <td>
-                    @Model.node_id
-                </td>
+            <tr>                
                 <td>
                     @Model.avatar_url
                 </td>
-                <td>
-                    @Model.gravatar_id
-                </td>
-                <td>
-                    @Model.url
-                </td>
-                <td>
-                    @Model.html_url
-                </td>
-                <td>
-                    @Model.followers_url
-                </td>
-                <td>
-                    @Model.following_url
-                </td>
-                <td>
-                    @Model.gists_url
-                </td>
-                <td>
-                    @Model.starred_url
-                </td>
-                <td>
-                    @Model.subscriptions_url
-                </td>
-                <td>
-                    @Model.organizations_url
-                </td>
+                
                 <td>
                     @Model.repos_url
-                </td>
-                <td>
-                    @Model.events_url
-                </td>
-                <td>
-                    @Model.received_events_url
-                </td>
-                <td>
-                    @Model.type
-                </td>
-                <td>
-                    @Model.site_admin
-                </td>
+                </td>                
                 <td>
                     @Model.name
-                </td>
-                <td>
-                    @Model.company
-                </td>
-                <td>
-                    @Model.blog
-                </td>
+                </td>                
                 <td>
                     @Model.location
                 </td>
-                <td>
-                    @Model.bio
-                </td>
-                <td>
-                    @Model.public_repos
-                </td>
-                <td>
-                    @Model.public_gists
-                </td>
-                <td>
-                    @Model.followers
-                </td>
-                <td>
-                    @Model.following
-                </td>
-                <td>
-                    @Model.created_at
-                </td>
-                <td>
-                    @Model.updated_at
-                </td>
-
             </tr>
         }
 

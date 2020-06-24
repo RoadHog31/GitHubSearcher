@@ -67,14 +67,12 @@ namespace GitHubSearcher.Controllers
 
                 //Deserializing the response recieved from web api and storing into the Employee list  
                 UserData = JsonConvert.DeserializeObject<User>(UserResponse);
-
-            }
+            }            
 
             //returning the users list to view  
             return View("Index", UserData);
             
         }
-
         
     }
 }
