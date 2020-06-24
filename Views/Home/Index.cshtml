@@ -2,7 +2,7 @@
 
 <P> Welcome </P>
 <br />
-@using (Html.BeginForm("GetUserData", "Home", FormMethod.Get))
+@using (Html.BeginForm("GetAsync", "Home", FormMethod.Get))
 {
     <form>
         <div class="form-row align-items-center">
@@ -31,7 +31,6 @@
                     <th>
                         @Html.DisplayNameFor(model => model.avatar_url)
                     </th>
-
                 </tr>
                 @if (Model != null)
                 {
