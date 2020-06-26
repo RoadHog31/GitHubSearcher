@@ -1,5 +1,5 @@
-# GitHubSearcher
-Init View and Scripts added inc Knockout library
+# GitHub Searcher
+Init View and Scripts added
 
 Create an ASP.Net MVC (.Net Framework and C#) website:
 
