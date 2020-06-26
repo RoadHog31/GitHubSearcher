@@ -1,7 +1,6 @@
 # GitHub Searcher
-Init View and Scripts added
 
-Create an ASP.Net MVC (.Net Framework and C#) website:
+An ASP.Net MVC (.Net Framework and C#) website:
 
          * A page containing a text box to enter a name in and a submit button to search GitHub for the name.
          
