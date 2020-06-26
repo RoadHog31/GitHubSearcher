@@ -11,8 +11,8 @@ namespace GitHubSearcher.Models
 {
     public class User
     {
-        [Column("Name")]
-        [JsonPropertyName("name")]
+        
+        [JsonPropertyName("name")] 
         public string name { get; set; }
 
         [Column("Avatar URL")]
