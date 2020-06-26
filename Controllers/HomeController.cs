@@ -26,6 +26,8 @@ namespace GitHubSearcher.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.Title = "Main Page";
+
             return View("Index");
         }
 
