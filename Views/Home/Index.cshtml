@@ -1,51 +1,16 @@
-﻿@model GitHubSearcher.Models.User
+﻿@model GitHubSearcher.ViewModels.gitHubDataViewModel
+
 
 @{
     ViewBag.Title = "Main Page";
 }
-<title>Top 5 Repo's </title>
-@{ 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.avatar_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.repos_url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.location)
-        </th>
-    </tr>
-
-    @if (Model != null)
-    {
-        <tr>
-            <td>
-                @Model.avatar_url
-            </td>
-
-            <td>
-                @Model.repos_url
-            </td>
-            <td>
-                @Model.name
-            </td>
-            <td>
-                @Model.location
-            </td>
-        </tr>
-    }
-
-</table>
-}
 <title> Welcome </title>
 <br />
+
+
 @using (Html.BeginForm("GetAsync", "Home", FormMethod.Get))
 {
+    @Html.AntiForgeryToken()
     <form>
         <div class="form-row align-items-center">
             <div class="col-auto">
@@ -63,16 +28,16 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.avatar_url)
+                @Html.DisplayNameFor(model => model.User.avatar_url)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.repos_url)
+                @Html.DisplayNameFor(model => model.User.repos_url)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.name)
+                @Html.DisplayNameFor(model => model.User.name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.location)
+                @Html.DisplayNameFor(model => model.User.location)
             </th>
         </tr>
 
@@ -80,21 +45,41 @@
         {
             <tr>
                 <td>
-                    @Model.avatar_url
+                    @Model.User.avatar_url
                 </td>
 
                 <td>
-                    @Model.repos_url
+                    @Model.User.repos_url
                 </td>
+                <th>
+                    @Model.User.name
+                </th>
                 <td>
-                    @Model.name
-                </td>
-                <td>
-                    @Model.location
+                    @Model.User.location
                 </td>
             </tr>
         }
-
     </table>
+    <br />
+    <h2>Top 5 StarGazer</h2>
+    if (Model != null)
+    {
+        <ul>
+            @foreach (var repo in Model.Repo)
+            {
+                <li>@repo.stargazers_count</li>
+                <li>@repo.description</li>
+                <li>@repo.full_name</li>
+                <li>@repo.name</li>
+            }
+        </ul>
+
+    }
+}
+}
 
 }
+
+
+
+

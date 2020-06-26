@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GitHubSearcher.Models.Repo>
+
+@foreach (var station in Model)
+{
+    
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.stargazers_count)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.full_name)
+                </th>
+            </tr>
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stargazers_count)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.full_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+            </tr>
+                }
+            }
+        </table>
+    }
+}
