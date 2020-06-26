@@ -1,13 +1,9 @@
 ﻿@model GitHubSearcher.ViewModels.gitHubDataViewModel
 
-
 @{
     ViewBag.Title = "Main Page";
 }
-<title> Welcome </title>
 <br />
-
-
 @using (Html.BeginForm("GetAsync", "Home", FormMethod.Get))
 {
     @Html.AntiForgeryToken()
@@ -15,7 +11,7 @@
         <div class="form-row align-items-center">
             <div class="col-auto">
                 <label class="sr-only" for="inlineFormInput">Name</label>
-                <input type="text" class="form-control mb-2" name="searchString" id="inlineFormInput" placeholder="Search a Github Name...">
+                <input type="text" class="form-control mb-2" pattern="[A-Za-z]+" name="searchString" size="50" id="inlineFormInput" placeholder="Search a Github Name ex: joebloggs" required /><span asp-validation-for="searchString"></span>
             </div>
         </div>
         <div class="col-auto">
@@ -24,6 +20,7 @@
     </form>
 }
 <br />
+<H4 class="active" style="color:#0063ff">GitHub User:</H4>
 @{
     <table class="table">
         <thead class="thead-dark">
@@ -63,7 +60,7 @@
         }
     </table>
     <br />
-    <h2>Top 5 Star Gazers</h2>
+    <h4 class="active" style="color:#0063ff">Top 5 Star Gazers</h4>
     if (Model != null)
     {
         <table class="table">
@@ -83,7 +80,6 @@
                     </th>
                 </tr>
             </thead>
-    
 
             @if (Model != null)
             {
@@ -91,13 +87,14 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => repos.name)
+                            <a href="http://@repos.html_url" target="_blank">@Html.DisplayFor(modelItem => repos.name)</a>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => repos.stargazers_count)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => repos.full_name)
+
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => repos.description)
@@ -106,25 +103,25 @@
                 }
             }
         </table>
-        <br />       
-            <H2 class="active">Top 5 Star Gazer Count Listed:</H2>
-        
-            if (Model != null)
-            {
-            <ul>
-                @foreach (var repo in Model.Repo.OrderByDescending(x => x.stargazers_count).Take(5))
-                {
-
-                    <li>@repo.stargazers_count</li>
-                    <li>@repo.description</li>
-                    <li>@repo.full_name</li>
-                    <li>@repo.name</li>
-
-                }
-            </ul>
-
-            }        
     }
+    <br />
+    <H4 class="active" style="color:#0063ff">Top 5 Star Gazer Count Listed:</H4>
+    if (Model != null)
+    {
+        <ul>
+            @foreach (var repo in Model.Repo.OrderByDescending(x => x.stargazers_count).Take(5))
+            {
+                <dl>
+                    <dt>@repo.stargazers_count</dt>
+                    <dd>@repo.description</dd>
+                    <dd>@repo.full_name</dd>
+                    <dd>@repo.name</dd>
+                </dl>
+            }
+        </ul>
+
+    }
+
 }
 
 

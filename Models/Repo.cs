@@ -24,6 +24,10 @@ namespace GitHubSearcher.Models
         [Column("Description")]
         [JsonPropertyName("description")]
         public string description { get; set; }
-        
+
+        [Column("html url")]
+        [JsonPropertyName("description")]
+        public string html_url { get; set; }
+
     }
 }

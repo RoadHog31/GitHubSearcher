@@ -32,13 +32,6 @@ namespace GitHubSearcher.Controllers
         }
 
 
-        /*Steps involved:
-            1) Get Json URL which will provide Github user data
-            2) Generate the C# Mapper class for the Json result data or Json response.
-            3) Deserialize Json result to C# mapper class.
-            4) Pass this mapped data to view
-            5) Display this Json result data to user in a Razor view page.
-        */
         [HttpGet]
         public async Task<ActionResult> GetAsync(string searchString)
         {
@@ -73,7 +66,6 @@ namespace GitHubSearcher.Controllers
                 UserData = JsonConvert.DeserializeObject<User>(UserResponse);
                 
             }
-
             
             //*** Start of repo api ***
             var repoUrl = UserData.repos_url;
