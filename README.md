@@ -15,7 +15,7 @@ Create an ASP.Net MVC (.Net Framework and C#) website:
          * For each repository, show the Name, FullName, Description and Stargazers. 
          * The Name should have a link to the repository.
          
-         * Including unit tests: I have used https://docs.microsoft.com/en-us/visualstudio/test/unit-test-basics?view=vs-2019
+         * Including unit tests: I have used AAA Unit testing https://docs.microsoft.com/en-us/visualstudio/test/unit-test-basics?view=vs-2019
          
          The AAA (Arrange, Act, Assert) pattern is a common way of writing unit tests for a method under test.
 
