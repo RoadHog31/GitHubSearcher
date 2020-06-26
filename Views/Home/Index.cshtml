@@ -101,19 +101,22 @@
                 }
             }
         </table>
-
         <h2>Top 5 StarGazer</h2>
         if (Model != null)
         {
-            <ul>
-                @foreach (var repo in Model.Repo)
-                {
-                    <li>@repo.stargazers_count</li>
-                    <li>@repo.description</li>
-                    <li>@repo.full_name</li>
-                    <li>@repo.name</li>
-                }
-            </ul>
+<ul>
+    @foreach (var repo in Model.Repo)
+    {
+        if (true)
+        {
+            <li>@repo.stargazers_count</li>
+            <li>@repo.description</li>
+            <li>@repo.full_name</li>
+            <li>@repo.name</li>
+        }
+
+    }
+</ul>
 
         }
     }
