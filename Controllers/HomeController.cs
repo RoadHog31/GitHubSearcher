@@ -67,7 +67,7 @@ namespace GitHubSearcher.Controllers
                 var UserResponse = response.Content.ReadAsStringAsync().Result;
                 
 
-                //Deserializing the response recieved from web api and storing into the Employee list  
+                //Deserializing the response recieved from web api and storing into the Users list.
                 UserData = JsonConvert.DeserializeObject<User>(UserResponse);
                 
             }
@@ -97,19 +97,19 @@ namespace GitHubSearcher.Controllers
                 var RepoResponse = response2.Content.ReadAsStringAsync().Result;
 
 
-                //Deserializing the response recieved from web api and storing into the Employee list  
+                //Deserializing the response recieved from web api and storing into the Repo list.
                 RepoData = JsonConvert.DeserializeObject<List<Repo>>(RepoResponse);
 
-            }
+            }            
 
             var viewModel = new gitHubDataViewModel
             {
                 User = UserData,
                 Repo = RepoData
+                
             };
 
-
-            //returning the users list to view  
+            //returning the users list to view via viewmodel object.
             return View("Index", viewModel);            
         }       
     }
