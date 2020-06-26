@@ -1,7 +1,7 @@
 # GitHubSearcher
 Init View and Scripts added inc Knockout library
 
-/* Create an ASP.Net MVC (.Net Framework and C#) website:
+Create an ASP.Net MVC (.Net Framework and C#) website:
 
          * A page containing a text box to enter a name in and a submit button to search GitHub for the name.
          
