@@ -61,21 +61,62 @@
         }
     </table>
     <br />
-    <h2>Top 5 StarGazer</h2>
     if (Model != null)
-    {
-        <ul>
-            @foreach (var repo in Model.Repo)
-            {
-                <li>@repo.stargazers_count</li>
-                <li>@repo.description</li>
-                <li>@repo.full_name</li>
-                <li>@repo.name</li>
+    {        
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Repo[0].name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Repo[0].stargazers_count)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Repo[0].full_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Repo[0].description)
+                </th>
+            </tr>
             }
-        </ul>
 
+            @if (Model != null)
+            {
+                foreach (var repos in Model.Repo)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => repos.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => repos.stargazers_count)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => repos.full_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => repos.description)
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+        <h2>Top 5 StarGazer</h2>
+        if (Model != null)
+        {
+            <ul>
+                @foreach (var repo in Model.Repo)
+                {
+                    <li>@repo.stargazers_count</li>
+                    <li>@repo.description</li>
+                    <li>@repo.full_name</li>
+                    <li>@repo.name</li>
+                }
+            </ul>
+
+        }
     }
-}
 }
 
 }
